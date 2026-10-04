@@ -47,4 +47,3 @@ For elements without an ID, I would use a short CSS selector, such as `button[ty
 
 ## Test run
 
-![Successful login](evidence/login-success.png)
