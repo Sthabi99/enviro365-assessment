@@ -1,4 +1,4 @@
-# Question 5 - Part B
+# Question 4 - Part C
 
 ## Exploratory testing charter: Payment Details (Step 4)
 
