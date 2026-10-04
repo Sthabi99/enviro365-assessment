@@ -4,7 +4,7 @@
 
 **Headers:** `Content-Type: application/json` and `x-api-key` from the local environment.
 
-I checked the endpoint before deciding whether `name` and `job` were required. ReqRes returned `201 Created` when either field was missing and when both were missing. These cases check the observed behaviour rather than assuming required-field validation.
+I checked which variables are required , found that  `name` and `job` are not required, ReqRes returned `201 Created` when either field was missing and when both were missing.
 
 | Test case ID | Description | Request body | Expected status | Response body checks |
 | --- | --- | --- | --- | --- |
@@ -15,6 +15,5 @@ I checked the endpoint before deciding whether `name` and `job` were required. R
 
 ## Field checks
 
-On 4 October 2026, all eight requests returned `201`: both fields supplied, each omitted, both omitted, each empty and each null. This endpoint did not enforce required-field validation in that run. These findings do not establish validation rules for other endpoints.
+all eight requests returned `201`: both fields supplied, each omitted, both omitted, each empty and each null. This endpoint did not enforce required-field validation in that run. 
 
-Recorded responses are in [required-fields.json](../evidence/required-fields.json). Run `npm run check:fields` to repeat the requests. The script records responses for inspection; it is an exploratory check, not an automated assertion of every property in this table.
