@@ -2,9 +2,9 @@
 
 **Request:** `POST https://reqres.in/api/users`
 
-**Headers:** `Content-Type: application/json`, with an API key if required.
+**Headers:** `Content-Type: application/json`.
 
-For the two negative cases, I have assumed that `name` and `job` are required. The brief does not give validation rules, so this needs to be confirmed before running these tests against ReqRes.
+ I have assumed that `name` and `job` are required.
 
 | Test case ID | Description | Request body | Expected status | Response body checks |
 | --- | --- | --- | --- | --- |
