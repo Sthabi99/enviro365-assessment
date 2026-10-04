@@ -2,19 +2,6 @@
 
 ## Part A - Registration test cases
 
-Use these valid details unless a test says to change them:
-
-| Field | Value |
-| --- | --- |
-| Full name | Thabo Dlamini |
-| Email | thabo.qa@example.com |
-| Mobile number | 0821234567 |
-| Password | Secure1! |
-| Confirm password | Secure1! |
-| Date of birth | 4 October 2000 |
-
-Run each variation separately with the other fields valid. Age checks use 4 October 2026 as the test date.
-
 | TC # | Test case title | Preconditions | Test steps | Expected result | Pass / Fail |
 | --- | --- | --- | --- | --- | --- |
 | TC-REG-001 | Register with valid details | Registration form is open and email is unused. | Enter the valid details above and click Register. | Registration succeeds with no validation errors. | Not run |
