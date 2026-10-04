@@ -13,7 +13,7 @@ For the response provided in the question, I would check:
 | First name | `data.first_name` is `Janet` |
 | Last name | `data.last_name` is `Weaver` |
 | Avatar | `data.avatar` is `https://reqres.in/img/faces/2-image.jpg` |
-| Support details | `support.url` is `https://reqres.in/#support-heading`, and `support.text` matches the text in the sample response |
+
 
 I would also check that the body is valid JSON before reading its fields. Checking the avatar URL alone does not prove that the image loads; that would need a separate request.
 
