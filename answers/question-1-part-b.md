@@ -14,7 +14,7 @@
 | Avatar | `data.avatar` is `https://reqres.in/img/faces/2-image.jpg` |
 
 
-I would also check that the body is valid JSON before reading its fields. Checking the avatar URL alone does not prove that the image loads; that would need a separate request.
+I would also check that the body is valid JSON before reading its fields.
 
 ## (ii) GET /users/999
 
