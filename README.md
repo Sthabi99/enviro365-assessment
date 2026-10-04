@@ -12,7 +12,7 @@ Junior Test Automation Engineer assessment.
 - [Question 4](answers/question-4.md) - registration test cases and defect report
 - [Question 4, Part C](answers/question-4-part-c.md) - payment exploratory testing charter
 
-The remaining answers and automation scripts will be added as each question is completed. Question 1 contains written test designs. Both Question 2 login tests passed in Chrome on 4 October 2026.
+Question 1 includes written test designs and a live check of required fields: all eight POST requests returned 201, including missing, empty and null fields. Both Question 2 login tests passed in Chrome on 4 October 2026. The other scenarios have not been executed.
 
 ## Setup
 
@@ -30,6 +30,8 @@ npm run test:ui
 ```
 
 For API tests, copy `.env.example` to `.env` and add your ReqRes API key. Do not commit `.env`.
+
+Run `npm run check:fields` to explore whether POST `/users` accepts missing, empty or null `name` and `job` values. Results are saved to `reports/required-fields.json`. Authentication errors do not count as field-validation results.
 
 ## Submission details
 
