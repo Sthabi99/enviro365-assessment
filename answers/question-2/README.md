@@ -43,10 +43,8 @@ I would use a unique, stable ID first. The username and password fields already 
 
 For elements without an ID, I would use a short CSS selector, such as `button[type='submit']` or `.flash.error`. I would avoid a long XPath tied to the page structure because a small layout change could break it.
 
-Reference: [Selenium waiting strategies](https://www.selenium.dev/documentation/webdriver/waits/).
+
 
 ## Test run
-
-Both tests passed on 4 October 2026 using headless Chrome and selenium-webdriver 4.50.0. There were 2 passes and no failures or skipped tests.
 
 ![Successful login](evidence/login-success.png)
