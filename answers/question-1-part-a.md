@@ -1,22 +1,16 @@
-# Question 1 — Part A: POST /users test cases
+# Question 1 - Part A
 
-Endpoint: `POST https://reqres.in/api/users`
+**Request:** `POST https://reqres.in/api/users`
 
-## Preconditions and assumptions
+**Headers:** `Content-Type: application/json`, with an API key if required.
 
-- Send requests with `Content-Type: application/json` and an API key if required by the live service. Keep the key in an environment variable; do not commit it.
-- The brief specifies `name` and `job` in the request but does not define validation rules or error messages. For the negative cases below, assume both fields are required. The expected 400 responses are proposed requirements, not verified ReqRes behaviour. Confirm the contract before treating these cases as executable acceptance tests.
-- These are designed test cases. Execution status: **Not run**.
+For the two negative cases, I have assumed that `name` and `job` are required. The brief does not give validation rules, so this needs to be confirmed before running these tests against ReqRes.
 
-| Test Case ID | Description | Input / Request Body | Expected Response Code | Expected Response Body Assertions |
+| Test case ID | Description | Request body | Expected status | Response body checks |
 | --- | --- | --- | --- | --- |
-| TC-API-001 | Create a user with the sample valid data. | `{"name":"John Doe","job":"QA Engineer"}` | **201 Created** | JSON body has `name` equal to `John Doe` and `job` equal to `QA Engineer`; `id` is a non-empty string; `createdAt` is a valid ISO 8601 timestamp. |
-| TC-API-002 | Create a user whose name contains Unicode characters. No ASCII-only restriction is stated. | `{"name":"José Dlamini","job":"Test Automation Engineer"}` | **201 Created** | JSON body preserves `name` as `José Dlamini` and `job` as `Test Automation Engineer`; `id` is a non-empty string; `createdAt` is a valid ISO 8601 timestamp. |
-| TC-API-003 | Attempt to create a user without the assumed required `name` field. | `{"job":"QA Engineer"}` | **400 Bad Request**, assuming required-field validation | JSON body contains a meaningful validation error identifying the missing `name` field; no successful creation metadata (`id` or `createdAt`) is returned. Exact error shape and wording must be confirmed from the API contract. |
-| TC-API-004 | Attempt to create a user without the assumed required `job` field. | `{"name":"John Doe"}` | **400 Bad Request**, assuming required-field validation | JSON body contains a meaningful validation error identifying the missing `job` field; no successful creation metadata (`id` or `createdAt`) is returned. Exact error shape and wording must be confirmed from the API contract. |
+| TC-API-001 | Create a user with valid details. | `{"name":"John Doe","job":"QA Engineer"}` | 201 Created | `name` is `John Doe`, `job` is `QA Engineer`, `id` is a non-empty string, and `createdAt` is a valid ISO 8601 timestamp. |
+| TC-API-002 | Create a user with an accented character in their name. | `{"name":"José Dlamini","job":"Test Automation Engineer"}` | 201 Created | The name is returned as `José Dlamini` without changing the accented character. The job matches the request, and `id` and `createdAt` are present and valid. |
+| TC-API-003 | Leave out the name. | `{"job":"QA Engineer"}` | 400 Bad Request, assuming name is required | An error identifies the missing name. No `id` or `createdAt` is returned. |
+| TC-API-004 | Leave out the job. | `{"name":"John Doe"}` | 400 Bad Request, assuming job is required | An error identifies the missing job. No `id` or `createdAt` is returned. |
 
-## Execution note
-
-Do not assume that a demonstration API enforces production validation rules. If ReqRes accepts an incomplete payload, record the actual result and clarify the intended validation contract. Do not report a failure against a required-field rule that has not been agreed.
-
-Reference for current authentication setup: [ReqRes API documentation](https://reqres.in/docs).
+These are expected results, not recorded test results. ReqRes may accept missing fields; if it does, I would check the agreed validation rules before logging a defect.

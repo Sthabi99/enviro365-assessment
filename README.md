@@ -1,25 +1,22 @@
-# Enviro365 — Junior Test Automation Engineer Assessment
+# Enviro365 assessment
 
-Written answers and JavaScript automation will be kept together in this repository.
+Junior Test Automation Engineer assessment.
 
-## Current progress
+## Answers
 
-- [Question 1 Part A: POST /users test cases](answers/question-1-part-a.md) — drafted, not executed.
-- Remaining assessment questions — pending.
-- Automation tests — pending. The test folders are prepared; no test execution is claimed.
+- [Question 1, Part A](answers/question-1-part-a.md) - POST /users test cases
+- [Question 1, Part B](answers/question-1-part-b.md) - response checks and missing users
 
-## Open in Visual Studio Code
+The remaining answers and automation scripts will be added as each question is completed. The tests have not been run yet.
 
-Open `enviro365-assessment.code-workspace`, or open this project folder.
+## Setup
 
-Use Node.js 22 or newer. Copy `.env.example` to `.env` before API execution and set your own ReqRes API key. `.env` is excluded from Git.
+Open this folder in VS Code. Use Node.js 22 or later.
 
-API automation will use Node.js. UI automation will use the assessment's required `selenium-webdriver` package when we implement Question 2.
+For API tests, copy `.env.example` to `.env` and add your ReqRes API key. Do not commit `.env`.
 
 ## Submission details
 
-Repository URL: https://github.com/Sthabi99/enviro365-assessment
+GitHub: https://github.com/Sthabi99/enviro365-assessment
 
-Submission branch: `main`.
-
-This is a work in progress and is not ready for assessment submission.
+Branch: `main`
