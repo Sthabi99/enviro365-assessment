@@ -14,24 +14,28 @@ The second test uses `wronguser` and `WrongPassword!`. It checks that a visible 
 
 An implicit wait applies to element searches across the browser session. If an element is not found immediately, Selenium keeps looking until the timeout. It does not check whether the element is visible or ready to use.
 
-For example, I could use a short implicit wait on a simple page where fields take a moment to appear:
+For example, this line in `logIn()` finds the Login button:
 
 ```javascript
-await driver.manage().setTimeouts({ implicit: 3000 });
-const username = await driver.findElement(By.id('username'));
+await driver.findElement(By.css("button[type='submit']")).click();
 ```
 
-An explicit wait is for a specific condition, such as a message becoming visible after login. It continues as soon as the condition is met, or fails when the timeout expires.
+If an implicit wait were configured, the `findElement()` call would keep looking for the button until that timeout. I would use this for a simple page where an element takes a moment to appear. Our script does not configure an implicit wait, and an implicit wait would not wait for the button to become clickable.
+
+An explicit wait is for a specific condition. Our `visibleElement()` helper waits for an element to exist and then become visible:
 
 ```javascript
-const message = await driver.wait(
-  until.elementLocated(By.css('.flash.success')),
-  10000
-);
-await driver.wait(until.elementIsVisible(message), 10000);
+const element = await driver.wait(until.elementLocated(locator), waitTime);
+await driver.wait(until.elementIsVisible(element), waitTime);
 ```
 
-I used explicit waits in the login tests because I need to check visibility before interacting with the fields or reading the result. I would not mix implicit and explicit waits, since that can make timeout behaviour unpredictable.
+For example, the successful login test calls this helper before reading the success message:
+
+```javascript
+const message = await visibleElement(driver, By.css('.flash.success'));
+```
+
+This is useful because the message appears after submitting the form. The wait ends as soon as the condition is met, or fails after `waitTime` (10 seconds). I used explicit waits so the fields and messages are visible before the script uses them. I would not mix implicit and explicit waits, since that can make timeout behaviour unpredictable.
 
 ### Preferred locator
 
