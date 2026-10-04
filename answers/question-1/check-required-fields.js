@@ -1,5 +1,6 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 
+// Read the key from .env rather than putting it in the source code.
 const apiKey = process.env.REQRES_API_KEY?.trim();
 if (!apiKey) {
   console.error('Set REQRES_API_KEY in .env before running this check.');
@@ -7,6 +8,8 @@ if (!apiKey) {
 }
 
 const baseUrl = process.env.REQRES_BASE_URL || 'https://reqres.in/api';
+// Start with valid data, then change one field at a time.
+// An omitted field, an empty string and null are different inputs.
 const cases = [
   { label: 'Both fields supplied', body: { name: 'John Doe', job: 'QA Engineer' } },
   { label: 'Name omitted', body: { job: 'QA Engineer' } },
@@ -22,12 +25,15 @@ const results = [];
 let blocked = false;
 try {
   for (const [index, scenario] of cases.entries()) {
+    // Send the requests one at a time so each result has a clear label.
     const response = await fetch(`${baseUrl.replace(/\/$/, '')}/users`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey },
       body: JSON.stringify(scenario.body),
+      // Stop waiting after 30 seconds if the service does not respond.
       signal: AbortSignal.timeout(30000),
     });
+    // A service error might not contain JSON. Keep the check from crashing on it.
     const text = await response.text();
     let body;
     try { body = JSON.parse(text); } catch { body = '[Non-JSON response]'; }
@@ -50,6 +56,8 @@ try {
   blocked = true;
 }
 
+// Save the responses so we can inspect the fields as well as the status codes.
+// Reports contain the request bodies, but never the authentication headers.
 await mkdir('reports', { recursive: true });
 await writeFile('reports/required-fields.json', JSON.stringify({
   runAt: new Date().toISOString(),

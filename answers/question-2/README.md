@@ -2,7 +2,7 @@
 
 ## Part A - Successful login
 
-The script is in [login.test.js](../tests/ui/login.test.js). The first test opens Chrome, enters `tomsmith` and `SuperSecretPassword!`, and clicks Login. It checks that the success message is visible and contains `You logged into a secure area!`, then saves `screenshots/login-success.png` and closes Chrome.
+The script is in [login.test.js](login.test.js). The first test opens Chrome, enters `tomsmith` and `SuperSecretPassword!`, and clicks Login. It checks that the success message is visible and contains `You logged into a secure area!`, then saves `screenshots/login-success.png` and closes Chrome.
 
 ## Part B (i) - Failed login
 
@@ -45,4 +45,4 @@ Reference: [Selenium waiting strategies](https://www.selenium.dev/documentation/
 
 Both tests passed on 4 October 2026 using headless Chrome and selenium-webdriver 4.50.0. There were 2 passes and no failures or skipped tests.
 
-![Successful login](../evidence/login-success.png)
+![Successful login](evidence/login-success.png)

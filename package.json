@@ -8,10 +8,9 @@
     "node": ">=22"
   },
   "scripts": {
-    "check:edges": "node --env-file-if-exists=.env scripts/check-edge-cases.js",
-    "check:fields": "node --env-file-if-exists=.env scripts/check-required-fields.js",
-    "test:api": "node --env-file-if-exists=.env --test tests/api/*.test.js",
-    "test:ui": "node --env-file-if-exists=.env --test tests/ui/*.test.js"
+    "check:edges": "node --env-file-if-exists=.env answers/question-1/check-edge-cases.js",
+    "check:fields": "node --env-file-if-exists=.env answers/question-1/check-required-fields.js",
+    "test:ui": "node --env-file-if-exists=.env --test answers/question-2/login.test.js"
   },
   "devDependencies": {
     "selenium-webdriver": "^4.50.0"
