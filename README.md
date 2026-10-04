@@ -10,6 +10,7 @@ Junior Test Automation Engineer assessment.
 - [Question 2](answers/question-2.md) - Selenium login tests, waits and locators
 - [Question 3](answers/question-3.md) - equivalence partitions and boundary values
 - [Question 4](answers/question-4.md) - registration test cases and defect report
+- [Question 5, Part B](answers/question-5-part-b.md) - payment exploratory testing charter
 
 The remaining answers and automation scripts will be added as each question is completed. Question 1 contains written test designs. Both Question 2 login tests passed in Chrome on 4 October 2026.
 
