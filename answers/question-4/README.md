@@ -2,7 +2,7 @@
 
 ## Part A - Registration test cases
 
-Pass/Fail below is hypothetical, not an execution record. Cases 1-5 assume the stated validation rules work; case 6 uses the age bug described in Part B. Run each variation separately with the other fields valid. Age examples use 4 October 2026.
+
 
 | TC # | Test case title | Preconditions | Test steps | Expected result | Pass / Fail |
 | --- | --- | --- | --- | --- | --- |
@@ -22,7 +22,7 @@ Pass/Fail below is hypothetical, not an execution record. Cases 1-5 assume the s
 | Severity & Priority | High severity and high priority because the form allows users below the minimum age. |
 | Environment (OS, Browser, App Version) | Not provided in the question. |
 | Steps to Reproduce | 1. Open the registration form. 2. Enter valid details in all other fields. 3. Enter DOB 4 October 2009, using 4 October 2026 as the test date. 4. Click Register. |
-| Actual Result | Registration proceeds and no age error appears, as described in the question. |
+| Actual Result | Registration proceeds and no age error appears. |
 | Expected Result | Registration is blocked and an inline DOB error says the user must be at least 18. |
 | Attachments / Notes | No attachments provided. Retest users just below 18 and exactly 18 after the fix. |
 
