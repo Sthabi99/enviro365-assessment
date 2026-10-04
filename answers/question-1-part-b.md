@@ -22,6 +22,3 @@ I would expect **404 Not Found**, because user `999` does not exist. The request
 
 For the ReqRes example, I would expect an empty JSON object (`{}`) and no user details. The status code is the main check; an API with a different error format could return a message explaining that the user was not found.
 
-## Live check
-
-On 4 October 2026, GET `/users/2` returned `200 OK` with the same user ID, email, names and avatar as the sample. Its content type was `application/json; charset=utf-8`. GET `/users/999` returned `404 Not Found` with `{}`.
