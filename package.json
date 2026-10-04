@@ -4,9 +4,14 @@
   "private": true,
   "description": "Junior Test Automation Engineer assessment answers and JavaScript tests",
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "test:api": "node --env-file-if-exists=.env --test tests/api/*.test.js",
     "test:ui": "node --env-file-if-exists=.env --test tests/ui/*.test.js"
+  },
+  "devDependencies": {
+    "selenium-webdriver": "^4.50.0"
   }
 }
