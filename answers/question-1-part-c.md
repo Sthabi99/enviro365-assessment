@@ -1,8 +1,6 @@
 # Question 1 - Part C
 
-## Edge cases and negative tests
-
-I explored the following cases against ReqRes on 4 October 2026. The expected checks below reflect the observed endpoint behaviour where it is known; a validation rule should not be invented when the brief does not state it.
+The expected checks below reflect the observed endpoint behaviour where it is known.
 
 | Scenario | Example request | Expected check | Observed result |
 | --- | --- | --- | --- |
