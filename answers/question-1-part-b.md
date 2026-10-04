@@ -2,7 +2,6 @@
 
 ## (i) Assertions for GET /users/2
 
-For the response provided in the question, I would check:
 
 | Check | Expected result |
 | --- | --- |
