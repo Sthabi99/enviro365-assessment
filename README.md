@@ -8,6 +8,7 @@ Junior Test Automation Engineer assessment.
 - [Question 1, Part B](answers/question-1-part-b.md) - response checks and missing users
 - [Question 1, Part C](answers/question-1-part-c.md) - edge cases and negative tests
 - [Question 2](answers/question-2.md) - Selenium login tests, waits and locators
+- [Question 3](answers/question-3.md) - equivalence partitions and boundary values
 
 The remaining answers and automation scripts will be added as each question is completed. Question 1 contains written test designs. Both Question 2 login tests passed in Chrome on 4 October 2026.
 
