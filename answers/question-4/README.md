@@ -20,7 +20,7 @@
 | Defect ID | BUG-REG-001 |
 | Title / Summary | A 17-year-old user can register |
 | Severity & Priority | High severity and high priority because the form allows users below the minimum age. |
-| Environment (OS, Browser, App Version) | Not provided in the question. |
+| Environment (OS, Browser, App Version) | Chrome browser |
 | Steps to Reproduce | 1. Open the registration form. 2. Enter valid details in all other fields. 3. Enter DOB 4 October 2009, using 4 October 2026 as the test date. 4. Click Register. |
 | Actual Result | Registration proceeds and no age error appears. |
 | Expected Result | Registration is blocked and an inline DOB error says the user must be at least 18. |
